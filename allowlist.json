@@ -2,7 +2,7 @@
 {
     "allowlist": [
         {
-            "package": "dennisameling/plugin-helloworld",
+            "package": "dennisameling/helloworld-bundle",
             "minimum_mautic_version": "4.1.0",
             "maximum_mautic_version": null
         }
