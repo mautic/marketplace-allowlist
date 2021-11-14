@@ -2,6 +2,8 @@
 
 During the Mautic Marketplace beta (introduced in Mautic 4.1), we are using an allowlist to explicitly define plugins that we know work correctly with Mautic 4.
 
+**Important note**: Mautic caches `allowlist.json` for 60 minutes (3600 seconds) by default. If you want to set a custom cache timeout, set `marketplace_allowlist_cache_ttl_seconds` to any number you want.
+
 
 ### Items in the JSON list
 
