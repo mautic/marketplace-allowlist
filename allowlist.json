@@ -10,6 +10,11 @@
             "package": "mtcextendee/mautic-owner-rotator-bundle",
             "minimum_mautic_version": "4.1.0",
             "maximum_mautic_version": null
+        },
+        {
+            "package": "acquia/mc-cs-plugin-custom-objects",
+            "minimum_mautic_version": "4.3.0",
+            "maximum_mautic_version": null
         }
     ]
 }
