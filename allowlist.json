@@ -16,6 +16,12 @@
             "display_name": "Custom Objects",
             "minimum_mautic_version": "4.3.0",
             "maximum_mautic_version": null
+        },
+        {
+            "package": "cronfig/mautic-cronfig",
+            "display_name": "Cronfig",
+            "minimum_mautic_version": "4.3.0",
+            "maximum_mautic_version": null
         }
     ]
 }
