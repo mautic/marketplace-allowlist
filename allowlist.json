@@ -18,6 +18,12 @@
             "maximum_mautic_version": null
         },
         {
+            "package": "mtalkz-mobility/mautic-mtalkz-bundle",
+            "display_name": "Mtalkz SMS",
+            "minimum_mautic_version": "4.3.0",
+            "maximum_mautic_version": null
+        },
+        {
             "package": "cronfig/mautic-cronfig",
             "display_name": "Cronfig",
             "minimum_mautic_version": "4.3.0",
