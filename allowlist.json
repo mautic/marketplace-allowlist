@@ -34,6 +34,12 @@
             "display_name": "Omnivery integration",
             "minimum_mautic_version": "4.3.0",
             "maximum_mautic_version": null
+        },
+        {
+            "package": "granam/mautic-czech-vocative-bundle",
+            "display_name": "Czech Vocative Bundle",
+            "minimum_mautic_version": "4.3.0",
+            "maximum_mautic_version": null
         }
     ]
 }
