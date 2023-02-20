@@ -40,6 +40,12 @@
             "display_name": "Czech Vocative Bundle",
             "minimum_mautic_version": "4.3.0",
             "maximum_mautic_version": null
+        },
+        {
+            "package": "webmecanik/mautic-pipedrive-bundle",
+            "display_name": "Pipedrive BUndle",
+            "minimum_mautic_version": "4.3.0",
+            "maximum_mautic_version": null
         }
     ]
 }
