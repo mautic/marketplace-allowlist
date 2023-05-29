@@ -40,6 +40,12 @@
             "display_name": "Czech Vocative Bundle",
             "minimum_mautic_version": "4.3.0",
             "maximum_mautic_version": null
+        },
+        {
+            "package": "webmecanik/mautic-bitly-bundle",
+            "display_name": "Bitly Bundle",
+            "minimum_mautic_version": "5.0.0",
+            "maximum_mautic_version": null
         }
     ]
 }
