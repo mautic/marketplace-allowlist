@@ -46,6 +46,12 @@
             "display_name": "Bitly Bundle",
             "minimum_mautic_version": "5.0.0",
             "maximum_mautic_version": null
+        },
+        {
+            "package": "mosparo/mautic-integration-bundle",
+            "display_name": "Mosparo integration",
+            "minimum_mautic_version": "5.0.0",
+            "maximum_mautic_version": null
         }
     ]
 }
