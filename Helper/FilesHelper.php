@@ -4,6 +4,9 @@ namespace MauticPlugin\MauticCheckBundle\Helper;
 
 class FilesHelper
 {
+    /**
+     * @return array <string, array>
+     */
     public static function getFiles(string $path): array
     {
         $list   = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
@@ -26,7 +29,7 @@ class FilesHelper
         return $result;
     }
 
-    public static function getLine($fullCode, $partCode): int|string
+    public static function getLine(string $fullCode, string $partCode): int
     {
         $lines = explode(PHP_EOL, $fullCode);
         foreach ($lines as $key => $value) {
@@ -38,7 +41,10 @@ class FilesHelper
         return 0;
     }
 
-    public static function getLines($fullCode, $partCode): array
+    /**
+     * @return array <int>
+     */
+    public static function getLines(string $fullCode, string $partCode): array
     {
         $lines  = explode(PHP_EOL, $fullCode);
         $result = [];
@@ -51,7 +57,7 @@ class FilesHelper
         return $result;
     }
 
-    public static function returnCodeLineByNumberCode($fullCode, $lineNumber): string
+    public static function returnCodeLineByNumberCode(string $fullCode, int $lineNumber): string
     {
         $lines = explode(PHP_EOL, $fullCode);
 

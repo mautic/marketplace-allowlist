@@ -3,21 +3,12 @@
 namespace MauticPlugin\MauticCheckBundle\Command;
 
 use Mautic\CoreBundle\Command\ModeratedCommand;
-use Mautic\CoreBundle\Helper\CoreParametersHelper;
-use Mautic\CoreBundle\Helper\PathsHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class PHPStanCommand extends ModeratedCommand
 {
-    public function __construct(
-        protected PathsHelper $pathsHelper,
-        private CoreParametersHelper $coreParametersHelper
-    ) {
-        parent::__construct($pathsHelper, $coreParametersHelper);
-    }
-
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('mautic:check:phpstan')
@@ -56,16 +47,16 @@ class PHPStanCommand extends ModeratedCommand
         return $output;
     }
 
-    private function check($output): bool
+    private function check(array $output): bool
     {
-        if (count($output) > 4 && false !== strpos($output[2], '[OK] No errors')) {
+        if (count($output) > 4 && str_contains($output[2], '[OK] No errors')) {
             return true;
         }
 
         return false;
     }
 
-    private function validate($arguments)
+    private function validate(array $arguments): ?string
     {
         return $arguments['plugin'];
     }

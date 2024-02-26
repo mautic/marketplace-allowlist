@@ -255,6 +255,9 @@ class DevilMethods
     ) {
     }
 
+    /**
+     * @return array <int, array>
+     */
     public function check(string $code): array
     {
         $result = [];
@@ -273,7 +276,10 @@ class DevilMethods
         return $result;
     }
 
-    private function getBlocks($code, $method, $outputResult)
+    /**
+     * @return array <int, array>
+     */
+    private function getBlocks(string $code, array $method, array $outputResult): array
     {
         $result = [];
         foreach ($outputResult[0] as $output) {
@@ -285,7 +291,10 @@ class DevilMethods
         return $result;
     }
 
-    public function returnResult($evilMethod, $line, $lineCode): array
+    /**
+     * @return array <string, mixed>
+     */
+    public function returnResult(array $evilMethod, int $line, string $lineCode): array
     {
         return [
             'line'     => $line,
@@ -303,7 +312,7 @@ class DevilMethods
         ];
     }
 
-    private function getRegex(string $name): int|string
+    private function getRegex(string $name): string
     {
         return sprintf('/(^|=|\s)%s\(.*\$.*\)/i', $name);
     }

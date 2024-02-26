@@ -23,7 +23,7 @@ class CheckEvilMethodsCommand extends ModeratedCommand
         parent::__construct($pathsHelper, $coreParametersHelper);
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('mautic:check:evil-methods')
@@ -95,7 +95,7 @@ class CheckEvilMethodsCommand extends ModeratedCommand
         }
     }
 
-    private function validate(string $plugin = null): ?string
+    private function validate(string $plugin = null): false|string
     {
         if (null === $plugin) {
             return false;

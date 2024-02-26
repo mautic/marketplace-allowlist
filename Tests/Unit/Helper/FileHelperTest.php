@@ -7,7 +7,15 @@ use MauticPlugin\MauticCheckBundle\Helper\FilesHelper;
 
 class FileHelperTest extends MauticMysqlTestCase
 {
-    public function testGetFileContent()
+    private string $pathFileOne;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->pathFileOne = __DIR__.'/../../Assets/Project1/Controller/ClassExample1Controller.php';
+    }
+
+    public function testGetFileContent(): void
     {
         $files = FilesHelper::getFiles(__DIR__.'/../../Assets/Project1/');
         $this->assertNotEmpty($files);
@@ -16,30 +24,27 @@ class FileHelperTest extends MauticMysqlTestCase
         $this->assertStringContainsString('FooModel.php', $files['files'][4]);
     }
 
-    public function testGetLine()
+    public function testGetLine(): void
     {
-        $filePath = __DIR__.'/../../Assets/Project1/Controller/ClassExample1Controller.php';
-        $file     = file_get_contents($filePath);
+        $file     = file_get_contents($this->pathFileOne);
         $line     = FilesHelper::getLine($file, 'public function method1($code)');
         $this->assertEquals(7, $line);
         $line = FilesHelper::getLine($file, '{');
         $this->assertEquals(6, $line);
     }
 
-    public function testGetLines()
+    public function testGetLines(): void
     {
-        $filePath = __DIR__.'/../../Assets/Project1/Controller/ClassExample1Controller.php';
-        $file     = file_get_contents($filePath);
+        $file     = file_get_contents($this->pathFileOne);
         $lines    = FilesHelper::getLines($file, 'eval');
         $this->assertEquals([9, 10, 11, 12, 15], $lines);
         $lines = FilesHelper::getLines($file, '{');
         $this->assertEquals([6, 8, 16, 21], $lines);
     }
 
-    public function testNumberLineCode()
+    public function testNumberLineCode(): void
     {
-        $filePath = __DIR__.'/../../Assets/Project1/Controller/ClassExample1Controller.php';
-        $file     = file_get_contents($filePath);
+        $file     = file_get_contents($this->pathFileOne);
         $line     = FilesHelper::returnCodeLineByNumberCode($file, 7);
         $this->assertEquals('    public function method1($code)', $line);
         $line = FilesHelper::returnCodeLineByNumberCode($file, 6);

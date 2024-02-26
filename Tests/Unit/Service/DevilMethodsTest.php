@@ -8,8 +8,15 @@ use MauticPlugin\MauticCheckBundle\Service\DevilMethods;
 
 class DevilMethodsTest extends MauticMysqlTestCase
 {
-    private $files;
-    private $result;
+    /**
+     * @var array <string, array>
+     */
+    private array $files;
+
+    /**
+     * @var array <string, array>
+     */
+    private array $result = [];
 
     public function setUp(): void
     {
@@ -18,7 +25,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->getResultCommand();
     }
 
-    public function testDevilMethodEval()
+    public function testDevilMethodEval(): void
     {
         $firstItem = reset($this->result);
         $this->assertSame('eval', $firstItem[0]['details']['name']);
@@ -26,7 +33,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result1 = eval($code);', $firstItem[0]['lineCode']);
     }
 
-    public function testDevilMethodSystem()
+    public function testDevilMethodSystem(): void
     {
         $firstItem = reset($this->result);
         $this->assertSame('system', $firstItem[3]['details']['name']);
@@ -41,7 +48,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertSame(2, $count);
     }
 
-    public function testDevilMethodShellExec()
+    public function testDevilMethodShellExec(): void
     {
         $firstItem = reset($this->result);
         $this->assertSame('shell_exec', $firstItem[2]['details']['name']);
@@ -49,7 +56,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result1   = shell_exec($code);', $firstItem[2]['lineCode']);
     }
 
-    public function testDevilMethodAssert()
+    public function testDevilMethodAssert(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('assert', $item[6]['details']['name']);
@@ -57,7 +64,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result3   = assert($code);', $item[6]['lineCode']);
     }
 
-    public function testDevilMethodParseStr()
+    public function testDevilMethodParseStr(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('parse_str', $item[7]['details']['name']);
@@ -65,7 +72,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result4   = parse_str($code, $result);', $item[7]['lineCode']);
     }
 
-    public function testDevilMethodProcOpen()
+    public function testDevilMethodProcOpen(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('proc_open', $item[3]['details']['name']);
@@ -73,7 +80,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result1   = proc_open($code);', $item[3]['lineCode']);
     }
 
-    public function testDevilMethodUnlink()
+    public function testDevilMethodUnlink(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('unlink', $item[9]['details']['name']);
@@ -81,7 +88,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result1   = unlink($code);', $item[9]['lineCode']);
     }
 
-    public function testDevilMethodPassthru()
+    public function testDevilMethodPassthru(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('passthru', $item[2]['details']['name']);
@@ -89,7 +96,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result    = passthru($code);', $item[2]['lineCode']);
     }
 
-    public function testDevilMethodExtract()
+    public function testDevilMethodExtract(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('extract', $item[8]['details']['name']);
@@ -97,7 +104,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result7   = extract($code, $result, \'aaaa\');', $item[8]['lineCode']);
     }
 
-    public function testDevilMethodUnserialize()
+    public function testDevilMethodUnserialize(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('unserialize', $item[5]['details']['name']);
@@ -105,7 +112,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result    = unserialize($code);', $item[5]['lineCode']);
     }
 
-    public function testDevilMethodRmdir()
+    public function testDevilMethodRmdir(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('rmdir', $item[10]['details']['name']);
@@ -113,7 +120,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result2   = rmdir($code);', $item[10]['lineCode']);
     }
 
-    public function testDevilMethodReadfile()
+    public function testDevilMethodReadfile(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('readfile', $item[14]['details']['name']);
@@ -121,7 +128,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result3   = readfile($code);', $item[14]['lineCode']);
     }
 
-    public function testDevilMethodFileGetContents()
+    public function testDevilMethodFileGetContents(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('file_get_contents', $item[13]['details']['name']);
@@ -129,7 +136,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result4   = file_get_contents($code);', $item[13]['lineCode']);
     }
 
-    public function testDevilMethodFilePutContents()
+    public function testDevilMethodFilePutContents(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('file_put_contents', $item[12]['details']['name']);
@@ -137,7 +144,7 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->assertStringContainsString('$result5   = file_put_contents($code, $result);', $item[12]['lineCode']);
     }
 
-    public function testDevilMethodFile()
+    public function testDevilMethodFile(): void
     {
         $item = $this->extractFile('ClassExample2Controller.php');
         $this->assertSame('file', $item[15]['details']['name']);
@@ -156,12 +163,17 @@ class DevilMethodsTest extends MauticMysqlTestCase
         $this->result = $result;
     }
 
-    private function extractFile($file)
+    /**
+     * @return array <int, array>
+     */
+    private function extractFile(string $file): array
     {
         foreach ($this->result as $key=>$resultFile) {
             if (str_contains($key, $file)) {
                 return $resultFile;
             }
         }
+
+        return [];
     }
 }
