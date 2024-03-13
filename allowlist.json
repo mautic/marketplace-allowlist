@@ -52,6 +52,12 @@
             "display_name": "Mosparo integration",
             "minimum_mautic_version": "5.0.0",
             "maximum_mautic_version": null
+        },
+        {
+            "package": "chimpino/theme-air",
+            "display_name": "Air theme for landing pages",
+            "minimum_mautic_version": "4.3.0",
+            "maximum_mautic_version": null
         }
     ]
 }
