@@ -1,0 +1,28 @@
+{
+  "name": "mautic/marketplace-allowlist",
+  "description": "Mautic Check",
+  "license": "GPL-3.0",
+  "type": "mautic-plugin",
+  "homepage": "https://www.mautic.org",
+  "authors": [
+    {
+      "name": "Lenon Leite",
+      "email": "lenonleite@gmail.com"
+    }
+  ],
+  "extra": {
+    "install-directory-name": "MauticCheckBundle"
+  },
+  "autoload": {
+    "psr-4": {
+      "MauticPlugin\\MauticCheckBundle\\": ""
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MauticPlugin\\MauticCheckBundle\\Tests\\": "Tests"
+    }
+  },
+  "require-dev": {
+  }
+}
