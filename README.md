@@ -13,3 +13,11 @@ During the Mautic Marketplace beta (introduced in Mautic 4.1), we are using an a
 | display_name | Human readable name that will be displayed in the Marketplace user interface | optional |
 | minimum_mautic_version | Minimum Mautic version that this item will be visible in. Example: 4.1.0 means that the package will show up in Mautic 4.1.0 and higher. | optional |
 | maximum_mautic_version | Maximum Mautic version that this item will be visible in. Example: 4.1.0 means that this package will show up in Mautic 4.1.0 and lower. | optional |
+
+### Next Features
+- [x] Validate evil PHP methods
+- [ ] Validate readable files (.env,json,ini,etc)
+- [ ] Validate permissions for files and folders
+- [ ] Validate sql injection
+- [ ] Validate XSS
+- [ ] If plugin is used without activation
