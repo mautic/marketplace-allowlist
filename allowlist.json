@@ -62,7 +62,7 @@
         {
             "package": "matbcvo/mautic-amazon-sns-callback",
             "display_name": "Integrates with Amazon SNS (Simple Notification Service) to handle bounce, complaint, and other notifications for email deliverability.",
-            "minimum_mautic_version": "5.0,0",
+            "minimum_mautic_version": "5.0.0",
             "maximum_mautic_version": null
         }
     ]
