@@ -64,6 +64,12 @@
             "display_name": "Integrates with Amazon SNS (Simple Notification Service) to handle bounce, complaint, and other notifications for email deliverability.",
             "minimum_mautic_version": "5.0.0",
             "maximum_mautic_version": null
+        },
+        {
+            "package": "etailors/mautic-amazon-ses",
+            "display_name": "Integrates Mautic with Amazon SES for sending emails and Amazon SNS for handling email feedback (bounces/complaints) via callbacks.",
+            "minimum_mautic_version": "5.2.0",
+            "maximum_mautic_version": null
         }
     ]
 }
