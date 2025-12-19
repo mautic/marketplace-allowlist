@@ -70,6 +70,24 @@
             "display_name": "Integrates Mautic with Amazon SES for sending emails and Amazon SNS for handling email feedback (bounces/complaints) via callbacks.",
             "minimum_mautic_version": "5.2.0",
             "maximum_mautic_version": null
+        },
+        {
+          "package": "leuchtfeuer/mautic-companytags-bundle",
+          "display_name": "Company Tags by Leuchtfeuer",
+          "minimum_mautic_version": "5.1.0",
+          "maximum_mautic_version": "5.2.99"
+        },
+        {
+          "package": "leuchtfeuer/mautic-companysegments-bundle",
+          "display_name": "Company Segments by Leuchtfeuer",
+          "minimum_mautic_version": "5.1.0",
+          "maximum_mautic_version": "5.2.99"
+        },
+        {
+          "package": "leuchtfeuer/mautic-companypoints-bundle",
+          "display_name": "Company Points by Leuchtfeuer",
+          "minimum_mautic_version": "5.1.0",
+          "maximum_mautic_version": "5.2.99"
         }
     ]
 }
