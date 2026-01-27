@@ -88,6 +88,12 @@
           "display_name": "Company Points by Leuchtfeuer",
           "minimum_mautic_version": "5.1.0",
           "maximum_mautic_version": "5.2.99"
+        },
+        {
+          "package": "leuchtfeuer/mautic-auth0-bundle",
+          "display_name": "Auth0 Integration by Leuchtfeuer",
+          "minimum_mautic_version": "5.0.0",
+          "maximum_mautic_version": null
         }
     ]
 }
