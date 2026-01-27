@@ -94,6 +94,12 @@
           "display_name": "Auth0 Integration by Leuchtfeuer",
           "minimum_mautic_version": "5.0.0",
           "maximum_mautic_version": null
+        },
+        {
+          "package": "leuchtfeuer/leuchtfeuer-housekeeping-bundle",
+          "display_name": "Housekeeping by Leuchtfeuer",
+          "minimum_mautic_version": "5.0.0",
+          "maximum_mautic_version": null
         }
     ]
 }
