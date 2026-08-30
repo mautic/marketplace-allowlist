@@ -106,6 +106,12 @@
           "display_name": "AI Email Sections",
           "minimum_mautic_version": "7.0.0",
           "maximum_mautic_version": null
+        },
+        {
+            "package": "bambamboole/laravel-oidc-mautic",
+            "display_name": "OpenID Connect Login",
+            "minimum_mautic_version": "7.0.0",
+            "maximum_mautic_version": null
         }
     ]
 }
